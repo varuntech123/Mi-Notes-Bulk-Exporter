@@ -63,3 +63,95 @@ To solve that, this tool captures internal note list and note detail responses a
 ```bash
 git clone https://github.com/varuntech123/mi-notes-bulk-exporter.git
 cd mi-notes-bulk-exporter
+```
+
+###2. Create a virtual environment
+```
+python -m venv venv
+```
+
+3. Activate the virtual environment
+```
+Windows PowerShell:
+venv\Scripts\Activate.ps1
+
+Windows CMD:
+venv\Scripts\activate
+```
+
+4. Install dependencies
+```
+pip install -r requirements.txt
+python -m playwright install chrome
+```
+How To Run
+```
+Export first 20 notes
+python mi_notes_exporter.py --output-dir exported_notes_first20 --limit 20 --debug
+```
+Export all notes
+```
+python mi_notes_exporter.py --output-dir exported_notes_all --limit 601 --debug
+```
+
+**Usage Steps**
+
+Run the script
+Log in to Mi Notes web manually
+Open All notes
+Keep the top notes visible in the left pane
+Press Enter in terminal
+Do not manually scroll or click after that
+Wait for the export to complete
+
+
+**Output**
+The tool creates separate .txt files for each note in the selected output folder.
+
+**Example:**
+
+note_01.txt
+notes_02.txt
+
+**Debug Mode**
+```
+Use --debug to save troubleshooting artifacts such as:
+```
+
+page screenshot
+ordered note targets
+captured network payloads
+
+**Important Notes**
+
+Do not upload personal exported notes to GitHub
+Do not upload browser profile/session folders
+This project is intended for personal data extraction and automation research
+Web app changes may require selector or response-mapping updates
+
+**Example Commands**
+```
+python mi_notes_exporter.py --output-dir exported_notes_demo --limit 10 --debug
+python mi_notes_exporter.py --output-dir exported_notes_first20 --limit 20 --debug
+python mi_notes_exporter.py --output-dir exported_notes_all --limit 500 --debug
+```
+
+**Portfolio Value**
+This project demonstrates:
+
+solving a real user problem
+browser automation
+reverse engineering a production web app
+using internal network responses instead of fragile scraping
+designing a hybrid automation + data extraction workflow
+
+
+
+**Step 4: Check `requirements.txt`**
+Keep only required dependencies. If this repo is only for the notes tool, `requirements.txt` should ideally be:
+
+```txt
+playwright
+
+
+
