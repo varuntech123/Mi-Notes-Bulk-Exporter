@@ -61,5 +61,5 @@ To solve that, this tool captures internal note list and note detail responses a
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/mi-notes-bulk-exporter.git
+git clone https://github.com/varuntech123/mi-notes-bulk-exporter.git
 cd mi-notes-bulk-exporter
