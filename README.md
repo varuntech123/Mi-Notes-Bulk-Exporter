@@ -147,7 +147,10 @@ python mi_notes_exporter.py --output-dir exported_notes_demo --limit 10 --debug
 python mi_notes_exporter.py --output-dir exported_notes_first20 --limit 20 --debug
 python mi_notes_exporter.py --output-dir exported_notes_all --limit 601 --debug
 ```
-
+**SCREESHOT**
+![Uploading S1.png…]()
+![Screenshot](S1.png)
+![Screenshot](S2.png)
 ## Interview Value
 
 This project demonstrates:
