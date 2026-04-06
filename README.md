@@ -17,7 +17,7 @@ This project automates the export process by combining:
 
 ## Key Idea
 
-Simple UI scraping was not reliable because the page mixed note-list previews and note-detail content.  
+Simple UI scraping was not reliable because the page mixed note-list previews and note-detail content.
 To solve that, this tool captures internal note list and note detail responses and uses them to export each note accurately.
 
 ## Features
@@ -41,7 +41,7 @@ To solve that, this tool captures internal note list and note detail responses a
 
 ## Working Flow
 
-- First, the browser opens Mi Notes web
+- The browser opens Mi Notes web
 - The user logs in and opens the `All notes` page
 - The exporter reads the starting visible notes in order
 - The tool captures internal network responses
@@ -61,97 +61,99 @@ To solve that, this tool captures internal note list and note detail responses a
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/varuntech123/mi-notes-bulk-exporter.git
+git clone https://github.com/YOUR-USERNAME/mi-notes-bulk-exporter.git
 cd mi-notes-bulk-exporter
 ```
 
-###2. Create a virtual environment
-```
+### 2. Create a virtual environment
+
+```bash
 python -m venv venv
 ```
 
-3. Activate the virtual environment
-```
+### 3. Activate the virtual environment
+
 Windows PowerShell:
+
+```powershell
 venv\Scripts\Activate.ps1
+```
 
 Windows CMD:
+
+```cmd
 venv\Scripts\activate
 ```
 
-4. Install dependencies
-```
+### 4. Install dependencies
+
+```bash
 pip install -r requirements.txt
 python -m playwright install chrome
 ```
-How To Run
-```
-Export first 20 notes
+
+## How To Run
+
+### Export first 20 notes
+
+```bash
 python mi_notes_exporter.py --output-dir exported_notes_first20 --limit 20 --debug
 ```
-Export all notes
-```
+
+### Export all notes
+
+```bash
 python mi_notes_exporter.py --output-dir exported_notes_all --limit 601 --debug
 ```
 
-**Usage Steps**
+## Usage Steps
 
-Run the script
-Log in to Mi Notes web manually
-Open All notes
-Keep the top notes visible in the left pane
-Press Enter in terminal
-Do not manually scroll or click after that
-Wait for the export to complete
+1. Run the script
+2. Log in to Mi Notes web manually
+3. Open `All notes`
+4. Keep the top notes visible in the left pane
+5. Press Enter in terminal
+6. Do not manually scroll or click after that
+7. Wait for the export to complete
 
+## Output
 
-**Output**
-The tool creates separate .txt files for each note in the selected output folder.
+The tool creates separate `.txt` files for each note in the selected output folder.
 
-**Example:**
+Example:
 
-note_01.txt
-notes_02.txt
+- `001_90-days-challenges.txt`
+- `002_diary-likhni-hai-topics.txt`
 
-**Debug Mode**
-```
-Use --debug to save troubleshooting artifacts such as:
-```
+## Debug Mode
 
-page screenshot
-ordered note targets
-captured network payloads
+Use `--debug` to save troubleshooting artifacts such as:
 
-**Important Notes**
+- page screenshot
+- ordered note targets
+- captured network payloads
 
-Do not upload personal exported notes to GitHub
-Do not upload browser profile/session folders
-This project is intended for personal data extraction and automation research
-Web app changes may require selector or response-mapping updates
+## Important Notes
 
-**Example Commands**
-```
+- Do not upload personal exported notes to GitHub
+- Do not upload browser profile/session folders
+- This project is intended for personal data extraction and automation research
+- Web app changes may require selector or response-mapping updates
+
+## Example Commands
+
+```bash
 python mi_notes_exporter.py --output-dir exported_notes_demo --limit 10 --debug
 python mi_notes_exporter.py --output-dir exported_notes_first20 --limit 20 --debug
-python mi_notes_exporter.py --output-dir exported_notes_all --limit 500 --debug
+python mi_notes_exporter.py --output-dir exported_notes_all --limit 601 --debug
 ```
 
-**Portfolio Value**
+## Interview Value
+
 This project demonstrates:
 
-solving a real user problem
-browser automation
-reverse engineering a production web app
-using internal network responses instead of fragile scraping
-designing a hybrid automation + data extraction workflow
-
-
-
-**Step 4: Check `requirements.txt`**
-Keep only required dependencies. If this repo is only for the notes tool, `requirements.txt` should ideally be:
-
-```txt
-playwright
-
-
-
+- solving a real user problem
+- browser automation
+- reverse engineering a production web app
+- using internal network responses instead of fragile scraping
+- designing a hybrid automation plus data extraction workflow
